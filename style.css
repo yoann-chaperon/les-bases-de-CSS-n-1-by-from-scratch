@@ -1,0 +1,153 @@
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 2.5rem;
+    color: dodgerblue;
+    text-shadow: 5px 1px 1px gold;
+    text-align: center;
+    font-family: 'Indie Flower', cursive;
+}
+
+body {
+    background: url(./asset/bg.jpeg)center/cover;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    background: whitesmoke;
+    width: 90%;
+    min-height: 500px;
+    margin: 10px auto;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 12px 15px rgba(0, 0, 0, .2);
+}
+
+.positioning,
+.flexbox,
+.grid {
+    border: 1px solid skyblue;
+    padding: 10px;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.positioning {
+    position: relative;
+}
+
+h2 {
+    margin: 0;
+}
+
+#circle {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: slateblue;
+    border-radius: 50%;
+    top: -10px;
+    right: 110px;
+    padding: 20px;
+    box-shadow: 0 2px 12px 5px rgba(0, 0, 0, 0.25);
+}
+
+#rectangle {
+    position: absolute;
+    width: 100px;
+    height: 15px;
+    left: 50%;
+    top: 50%;
+    padding: 15px;
+    background: teal;
+    transform: translate(-50%, -50%);
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+    font-size: 0.7rem;
+    height: 160px;
+    width: 160px;
+    background: turquoise;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    padding: 20px;
+}
+.img {
+    text-align: center;
+}
+input,
+textarea {
+    margin: 5px;
+    padding: 15px;
+    height: 45px;
+    border: 1px solid darkblue;
+    border-radius: 5px;
+    font-family: 'Mochiy Pop P One', sans-serif;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas:
+        "i1 i2"
+        "ta ta"
+        "bt bt";
+}
+
+#firstname {
+    grid-area: i1;
+}
+
+#surname {
+    grid-area: i2;
+}
+
+textarea {
+    grid-area: ta;
+    resize: none;
+}
+
+input[type="submit"] {
+    grid-area: bt;
+    cursor: pointer;
+    transition: .3s;
+    background: cyan;
+}
+
+input[type="submit"]:hover {
+    background: darkcyan;
+    color: white;
+}
+
+@media screen and (max-width: 1000px){
+    .grid-container {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 780px){
+    form {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+            "i1"
+            "i2"
+            "ta"
+            "bt";
+    }
+}
